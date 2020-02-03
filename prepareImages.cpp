@@ -45,14 +45,14 @@ int main(int argc, char* argv[]) {
 
   cv::Mat img, img_edge;
   vector<string> images;
-  le_diretorio("./LRAP/Zoom_8um",images);
+  le_diretorio("./imagens",images);
   cout << " quantidade de imagens: " << images.size() << endl;
   sort(images.begin(), images.end());
   
   
   for(int index = 0; index < images.size(); index++){
 
-    img = cv::imread("./LRAP/Zoom_8um/"+images[index],cv::IMREAD_GRAYSCALE);
+    img = cv::imread("./imagens/"+images[index],cv::IMREAD_GRAYSCALE);
     cv::resize(img, img, cv::Size(), 0.35, 0.35);
     cv::threshold(img, img_edge, 130, 255, cv::THRESH_BINARY);
     
@@ -93,7 +93,7 @@ int main(int argc, char* argv[]) {
     
     cv::Mat res;
     cv::bitwise_or(img, img_edge, res);
-    cv::imwrite("./imagens/binaria"+to_string(index)+".tif", res);
+    cv::imwrite("./imagens/modificadas/binaria"+to_string(index)+".tif", res);
     
     
   }
