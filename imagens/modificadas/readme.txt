@@ -1,1 +1,1 @@
-As imagens modificadas ficaram aqui
+As imagens modificadas ficarão aqui
